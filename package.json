@@ -1,0 +1,13 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "description": "A web-application-skeleton based on pedestal and component",
+  "repository": "git@github.com:n2o/web-skeleton.git",
+  "author": "Christian Meter <cmeter@gmail.com>",
+  "license": "Eclipse",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1"
+  }
+}
