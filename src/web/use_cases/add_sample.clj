@@ -12,7 +12,7 @@
 
 (def sample (first (last (s/exercise :web.entities.sample/sample))))
 
-(let [context {:save-sample (reify SaveSeminar
+(let [context {:save-sample (reify SaveSample
                               (save-sample [_ sample]
                                 (prn :saved sample)))}])
 

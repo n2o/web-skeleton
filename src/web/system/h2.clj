@@ -1,9 +1,9 @@
 (ns web.system.h2
   (:require [com.stuartsierra.component :as component]
             [korma.db :as kdb]
-            [horsch.use-cases.add-seminar :as save-seminar]))
+            [web.use-cases.add-sample :as save-sample]))
 
-(defrecord H2 [config connection]
+(defrecord H2 [config cqonnection]
   component/Lifecycle
   (start [this]
     (assoc this :connection (kdb/h2 {:db "resources/db/korma.db"})))
@@ -13,7 +13,7 @@
 (defn h2 [config]
   (map->H2 {:config h2}))
 
-(extend-protocol save-seminar/SaveSeminar
+(extend-protocol save-sample/SaveSample
   H2
-  (save-seminar [h2 seminar]
-    (prn "Do some SQL inserts..." seminar)))
+  (save-sample [h2 sample]
+    (prn "Do some SQL inserts..." sample)))
